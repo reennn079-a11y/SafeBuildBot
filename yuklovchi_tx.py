@@ -1,0 +1,152 @@
+"""Super yuklovchi bot matnlari: uz (lotin), ru, en. Kirill o'zbekcha uz dan avtomatik o'giriladi (botlang.translit).
+Admin paneli matnlari bu yerda emas — ular egasi uchun, o'zbekcha."""
+
+UZ = {
+    "welcome": ("👋 Salom! Yuklovchi bot — yuklash, qo'shiq topish va MP3, hammasi bir botda!\n\n"
+                "📥 Havolani yuboring (Instagram, TikTok, Pinterest, Facebook, X, Likee, RuTube, YouTube) — qolganini bot qiladi.\n"
+                "🎵 Qo'shiq topish: ovozli xabar, video yoki audio yuboring, yoki qo'shiq nomini yozing.\n"
+                "🔥 /top — hozir eng mashhur qo'shiqlar\n"
+                "⭐ /plus — limitsiz yuklash\n\n"
+                "⚠️ Faqat o'zingizga tegishli yoki yuklashga ruxsat berilgan kontentni yuklang."),
+    "wait": "⏳ Yuklanmoqda...",
+    "fail": "Yuklab bo'lmadi. Havola ochiq (public) ekanini tekshiring.",
+    "fail_story": "Hikoyani yuklab bo'lmadi: u yopiq yoki bot hisobiga kirmagan. Egasiga murojaat qiling.",
+    "too_big": "Fayl Telegramga sig'maydi (eng ko'pi {mb} MB).",
+    "limit": "Bugungi bepul limit tugadi ({n} ta). ⭐ Plus bilan cheklovsiz yuklang: /plus\n(Avval yuklangan narsalar baribir bepul.)",
+    "searching": "🔎 Qidirilmoqda...",
+    "no_results": "Natija topilmadi. Boshqa so'z bilan urinib ko'ring.",
+    "expired": "Qidiruv eskirgan, qaytadan yozing.",
+    "search_err": "Qidirishda xatolik. Birozdan so'ng qayta urinib ko'ring.",
+    "pick_quality": "📥 Sifatni tanlang:\n{title}",
+    "no_options": "Bu video uchun mos variant topilmadi (juda katta bo'lishi mumkin).",
+    "audio_fail": "Audioni yuklab bo'lmadi (hajmi katta bo'lishi mumkin).",
+    "downloading": "Yuklanmoqda...",
+    "more": "➕ Yana",
+    "close": "❌",
+    "tt_music": "🎵 Musiqasi",
+    "mp3": "⬇️ MP3 yuklash",
+    "lyrics": "📄 Qo'shiq matni",
+    "rec_wait": "🎧 Taniyapman...",
+    "rec_none": "Qo'shiq taniolmadim. Aniqroq yoki uzunroq (10–20 soniya) parcha yuboring.",
+    "rec_off": "Qo'shiq tanish hozir mavjud emas.",
+    "rec_big": "Fayl juda katta, qisqaroq parcha yuboring.",
+    "no_lyrics": "Bu qo'shiq uchun matn topilmadi.",
+    "top_title": "🔥 Hozir eng mashhur qo'shiqlar — {region}",
+    "top_uz": "O'zbekiston",
+    "top_world": "dunyo bo'yicha",
+    "top_off": "Mashhur qo'shiqlar ro'yxatini hozir olib bo'lmadi.",
+    "plus_info": ("⭐ <b>Plus obuna</b>\n\n• Cheklovsiz yuklash\n• Reklamasiz\n• Ustuvor navbat\n\n"
+                  "Muddatni tanlang (to'lov Telegram Stars bilan):"),
+    "plus_btn": "⭐ {days} kun — {stars} ⭐",
+    "plus_ok": "✅ Plus yoqildi! {date} gacha cheklovsiz yuklashingiz mumkin.",
+    "plus_active": "⭐ Sizda Plus bor: {date} gacha.",
+    "inline_wait": "⏳ Yuklanmoqda...",
+    "inline_fail": "❌ Yuklab bo'lmadi. Botga o'tib, qo'shiq nomini yozing.",
+    "inline_open": "Botda ochish",
+    "group_limit": "Limit tugadi, botga shaxsiy xabarda /plus yozing.",
+    "cached": "🔵",
+    "subscribe": "Botdan foydalanish uchun quyidagi kanallarga obuna bo'ling, so'ng «Tekshirish» tugmasini bosing:",
+    "check": "✅ Tekshirish",
+    "sub_first": "Avval kanallarga obuna bo'ling.",
+    "sub_not_all": "Hali hamma kanalga obuna bo'lmagansiz.",
+}
+
+RU = {
+    "welcome": ("👋 Привет! Загрузчик — скачивание, поиск песен и MP3 в одном боте!\n\n"
+                "📥 Отправьте ссылку (Instagram, TikTok, Pinterest, Facebook, X, Likee, RuTube, YouTube) — остальное сделает бот.\n"
+                "🎵 Поиск песни: отправьте голосовое, видео или аудио, либо напишите название.\n"
+                "🔥 /top — самые популярные песни сейчас\n"
+                "⭐ /plus — загрузка без ограничений\n\n"
+                "⚠️ Скачивайте только свой контент или тот, который разрешено скачивать."),
+    "wait": "⏳ Загружаю...",
+    "fail": "Не удалось загрузить. Проверьте, что ссылка открыта (public).",
+    "fail_story": "Не удалось загрузить историю: она закрыта или бот не вошёл в аккаунт. Обратитесь к владельцу.",
+    "too_big": "Файл не помещается в Telegram (максимум {mb} МБ).",
+    "limit": "Бесплатный лимит на сегодня закончился ({n}). ⭐ С Plus — без ограничений: /plus\n(Ранее загруженное по-прежнему бесплатно.)",
+    "searching": "🔎 Ищу...",
+    "no_results": "Ничего не найдено. Попробуйте другие слова.",
+    "expired": "Поиск устарел, напишите заново.",
+    "search_err": "Ошибка поиска. Попробуйте чуть позже.",
+    "pick_quality": "📥 Выберите качество:\n{title}",
+    "no_options": "Для этого видео нет подходящих вариантов (возможно, слишком большое).",
+    "audio_fail": "Не удалось загрузить аудио (возможно, файл слишком большой).",
+    "downloading": "Загружаю...",
+    "more": "➕ Ещё",
+    "close": "❌",
+    "tt_music": "🎵 Музыка",
+    "mp3": "⬇️ Скачать MP3",
+    "lyrics": "📄 Текст песни",
+    "rec_wait": "🎧 Распознаю...",
+    "rec_none": "Не удалось распознать песню. Отправьте более чёткий или длинный (10–20 сек) фрагмент.",
+    "rec_off": "Распознавание песен сейчас недоступно.",
+    "rec_big": "Файл слишком большой, отправьте фрагмент покороче.",
+    "no_lyrics": "Текст этой песни не найден.",
+    "top_title": "🔥 Самые популярные песни сейчас — {region}",
+    "top_uz": "Узбекистан",
+    "top_world": "мир",
+    "top_off": "Сейчас не удалось получить список популярных песен.",
+    "plus_info": ("⭐ <b>Подписка Plus</b>\n\n• Загрузка без ограничений\n• Без рекламы\n• Приоритетная очередь\n\n"
+                  "Выберите срок (оплата Telegram Stars):"),
+    "plus_btn": "⭐ {days} дн. — {stars} ⭐",
+    "plus_ok": "✅ Plus активирован! Без ограничений до {date}.",
+    "plus_active": "⭐ У вас Plus до {date}.",
+    "inline_wait": "⏳ Загружаю...",
+    "inline_fail": "❌ Не удалось загрузить. Перейдите в бота и напишите название песни.",
+    "inline_open": "Открыть в боте",
+    "group_limit": "Лимит закончился, напишите боту в личные сообщения /plus.",
+    "cached": "🔵",
+    "subscribe": "Чтобы пользоваться ботом, подпишитесь на каналы ниже и нажмите «Проверить»:",
+    "check": "✅ Проверить",
+    "sub_first": "Сначала подпишитесь на каналы.",
+    "sub_not_all": "Вы подписаны не на все каналы.",
+}
+
+EN = {
+    "welcome": ("👋 Hi! Downloader — save videos, find songs and get MP3s, all in one bot!\n\n"
+                "📥 Send a link (Instagram, TikTok, Pinterest, Facebook, X, Likee, RuTube, YouTube) and the bot does the rest.\n"
+                "🎵 Find a song: send a voice message, video or audio, or type the song name.\n"
+                "🔥 /top — the most popular songs right now\n"
+                "⭐ /plus — unlimited downloads\n\n"
+                "⚠️ Only download content that is yours or that you are allowed to download."),
+    "wait": "⏳ Downloading...",
+    "fail": "Couldn't download. Check that the link is public.",
+    "fail_story": "Couldn't download the story: it is private or the bot isn't logged in. Contact the owner.",
+    "too_big": "The file is too big for Telegram (max {mb} MB).",
+    "limit": "Today's free limit is used up ({n}). ⭐ Go unlimited with Plus: /plus\n(Things downloaded before are still free.)",
+    "searching": "🔎 Searching...",
+    "no_results": "No results. Try different words.",
+    "expired": "This search has expired, please search again.",
+    "search_err": "Search error. Please try again shortly.",
+    "pick_quality": "📥 Choose quality:\n{title}",
+    "no_options": "No suitable option for this video (it may be too large).",
+    "audio_fail": "Couldn't download the audio (it may be too large).",
+    "downloading": "Downloading...",
+    "more": "➕ More",
+    "close": "❌",
+    "tt_music": "🎵 Music",
+    "mp3": "⬇️ Download MP3",
+    "lyrics": "📄 Lyrics",
+    "rec_wait": "🎧 Listening...",
+    "rec_none": "Couldn't recognise the song. Send a clearer or longer (10–20 s) clip.",
+    "rec_off": "Song recognition is unavailable right now.",
+    "rec_big": "The file is too large, send a shorter clip.",
+    "no_lyrics": "No lyrics found for this song.",
+    "top_title": "🔥 Most popular songs right now — {region}",
+    "top_uz": "Uzbekistan",
+    "top_world": "worldwide",
+    "top_off": "Couldn't load the chart right now.",
+    "plus_info": ("⭐ <b>Plus subscription</b>\n\n• Unlimited downloads\n• No ads\n• Priority queue\n\n"
+                  "Choose a period (paid with Telegram Stars):"),
+    "plus_btn": "⭐ {days} days — {stars} ⭐",
+    "plus_ok": "✅ Plus activated! Unlimited downloads until {date}.",
+    "plus_active": "⭐ You have Plus until {date}.",
+    "inline_wait": "⏳ Downloading...",
+    "inline_fail": "❌ Couldn't download. Open the bot and type the song name.",
+    "inline_open": "Open in bot",
+    "group_limit": "Limit reached — message the bot privately and send /plus.",
+    "cached": "🔵",
+    "subscribe": "To use the bot, subscribe to the channels below, then press “Check”:",
+    "check": "✅ Check",
+    "sub_first": "Please subscribe to the channels first.",
+    "sub_not_all": "You haven't joined all the channels yet.",
+}

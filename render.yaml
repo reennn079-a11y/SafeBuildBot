@@ -1,0 +1,21 @@
+services:
+  - type: web               # Web Service: main.py $PORT da /health javob beradi
+    name: bot-konstruktor
+    runtime: docker
+    plan: starter           # doimiy disk faqat pullik rejada bor
+    healthCheckPath: /health
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 5
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: BUILDER_TOKEN
+        sync: false
+      - key: SUPER_ADMINS
+        sync: false
+      - key: CARD_INFO
+        sync: false
+      - key: SITE_URL
+        sync: false
